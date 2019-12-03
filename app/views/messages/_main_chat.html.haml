@@ -7,9 +7,7 @@
    .main__header__left-box__member
     メンバー：ぽん
   .main__header__edit
-   %a{:href => "#"}
-   .main-header__edit Edit
-
+   = link_to 'Edit', "#" , class: "edit-btn"
  .main__message
   .message
    .message__upper-info
@@ -23,11 +21,11 @@
  .main__form
   .message-box
    .message-box__input
-    %input{:type => "text", :placeholder => "type a message", :class => "message-box__input"}/
+    %input{type: "text", placeholder: "type a message", class: "message-box__input"}/
     .message-box__input__image
      %label{class: "message-box__input__image"}
       = icon('fas', 'image')
       %input{type: "file" ,class:"file"}
    .message-box__submit-btn
-    %input{:type => "submit" ,:value => "Send",:class => "message-box__submit-btn"}/
+    %input{type: "submit" ,value: "Send",class: "message-box__submit-btn"}/
   

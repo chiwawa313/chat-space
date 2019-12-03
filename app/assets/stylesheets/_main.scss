@@ -26,13 +26,16 @@
     }
    }
    &__edit{
-    color: #38aef0;
     border: solid 1px #38aef0;
     height: 40px;
     line-height: 40px;
     margin-top: 30px;
     padding: 0px 20px;
    }
+    .edit-btn{
+     text-decoration: none;
+     color: #38aef0;
+    }
   }
 
   .main__message{
