@@ -36,13 +36,15 @@
     padding: 20px 20px 0px;
     .groups{
       margin-bottom: 40px;
-      color:white;
      &__name{
       font-size: 15px;
       margin-bottom: 5px;
+      color:white;
+      text-decoration: none;
      }
      &__messages{
       font-size: 11px;
+      color:white;
      }
    }
   }
