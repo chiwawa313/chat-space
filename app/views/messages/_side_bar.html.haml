@@ -13,6 +13,8 @@
  .side__group
   .groups
    .groups__name
-    aチーム
+    - current_user.groups.each do |group|
+     = link_to group_messages_path(group) do
+      = group.name
    .groups__messages
     まだメッセージがありません
