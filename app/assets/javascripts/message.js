@@ -58,5 +58,33 @@ $('#new_message').on('submit', function(e){
     alert("メッセージ送信に失敗しました");
 });
 })
+var reloadMessages = function() { 
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+  last_message_id = $('.message:last').data("message-id");
+  $.ajax({
+    url: "api/messages",
+    type: 'get',
+    dataType: 'json',
+    data: {id: last_message_id}
+  })
+  .done(function(messages) {
+    if (messages.length !== 0) {
+     var insertHTML = '';
+     $.each(messages, function(i, message) {
+       insertHTML += buildHTML(message)
+     });
+     $('.main__message').append(insertHTML);
+     $('.main__message').animate({ scrollTop: $('.main__message')[0].scrollHeight});
+     $("#new_message")[0].reset();
+     $(".btn").prop("disabled", false);
+   }
+  })
+  .fail(function() {
+    console.log('error');
+  });
+}
+};
+  setInterval(reloadMessages, 7000);
+
 });
 
