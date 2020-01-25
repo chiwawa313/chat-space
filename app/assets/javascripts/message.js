@@ -79,9 +79,6 @@ var reloadMessages = function() {
      $(".btn").prop("disabled", false);
    }
   })
-  .fail(function() {
-    console.log('error');
-  });
 }
 };
   setInterval(reloadMessages, 7000);
